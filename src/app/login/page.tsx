@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import { FileText, ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Login() {
   const [email, setEmail] = useState("");
