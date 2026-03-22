@@ -54,7 +54,7 @@ export default function Login() {
                 className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:ring-1 focus:ring-indigo-500 transition-all font-medium"
               />
             </div>
-            {error && <p className="text-red-400 text-xs font-bold text-center mb-2">{error}</p>}
+            {error && <p className="text-red-400 text-xs font-bold text-center mt-2">{error}</p>}
             <button type="submit" className="btn-primary w-full py-4 text-lg font-bold flex items-center justify-center gap-2">
               Sign In <ArrowRight className="w-5 h-5" />
             </button>
