@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Engineering Hub",
+  title: "Engineering Hub | Material & Calculation Tools",
   description: "Convert PDF to Excel with high accuracy. Preserve tables, formatting, and structure. Secure and fast SaaS platform.",
 };
 
