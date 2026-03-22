@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Engineering Hub | Material & Calculation Tools",
-  description: "Convert PDF to Excel with high accuracy. Preserve tables, formatting, and structure. Secure and fast SaaS platform.",
+  description: "Engineering Hub - Material & Calculation Tools. Secure and fast platform for project estimates.",
 };
 
 export default function RootLayout({
