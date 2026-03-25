@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { 
   LayoutDashboard, FileText, Ruler, Calculator, 
-  Settings, Zap, ShieldCheck, User, LogOut 
+  Settings, Zap, ShieldCheck, User, LogOut, Layers 
 } from "lucide-react";
 
 export default function DashboardSidebar() {
