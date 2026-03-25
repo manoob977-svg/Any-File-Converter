@@ -66,45 +66,8 @@ export default function DashMain2D() {
 
       <div className="max-w-7xl mx-auto px-6 py-12 lg:py-20 relative z-10">
         
-        {/* Navigation & Header */}
-        <header className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-          <div className="space-y-4">
-             <motion.div 
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-3 py-1 bg-indigo-50 border border-indigo-100 rounded-full"
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 animate-pulse" />
-              <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-700">Engineering Hub v4.0</span>
-            </motion.div>
-            
-            <motion.h1 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              className="text-6xl md:text-8xl font-black tracking-tight text-slate-900"
-            >
-              Master <br />
-              <span className="text-indigo-600">Terminal.</span>
-            </motion.h1>
-          </div>
-
-          <div className="flex flex-col items-start md:items-end gap-6">
-             <div className="flex items-center gap-3">
-               <Link href="/login" className="px-6 py-2.5 text-sm font-bold text-slate-600 hover:text-slate-900 transition-colors">Sign In</Link>
-               <Link href="/signup" className="px-8 py-3 bg-slate-900 text-white text-sm font-bold rounded-xl hover:bg-indigo-600 transition-all shadow-xl shadow-slate-200">Join Hub</Link>
-             </div>
-             
-             <div className="flex items-center gap-6 pt-4 border-t border-slate-100">
-                {stats.map((s) => (
-                  <div key={s.label} className="flex items-center gap-2">
-                    <div className="text-slate-400">{s.icon}</div>
-                    <span className="text-[10px] uppercase tracking-widest font-bold text-slate-500">{s.label}: </span>
-                    <span className="text-[10px] uppercase tracking-widest font-black text-slate-900">{s.value}</span>
-                  </div>
-                ))}
-             </div>
-          </div>
-        </header>
+        {/* Spacer for clean top entry */}
+        <div className="h-12" />
 
         {/* Bento Grid 2D */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-20">
