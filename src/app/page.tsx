@@ -1,16 +1,13 @@
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
+import DashMain from "@/components/DashMain";
 
 export default function Home() {
   return (
-    <main>
+    <main className="h-screen overflow-hidden flex flex-col bg-black">
       <Navbar />
-      <Hero />
-      <footer className="py-20 text-center text-gray-500 text-sm border-t border-white/10 mt-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <p>© {new Date().getFullYear()} AnyConv. Built for ultimate productivity.</p>
-        </div>
-      </footer>
+      <div className="flex-1 relative">
+        <DashMain />
+      </div>
     </main>
   );
 }
