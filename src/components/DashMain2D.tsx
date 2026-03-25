@@ -9,137 +9,132 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-const mainLinks = [
-  {
-    title: "Estimate Hub",
-    description: "Industrial-grade project cost and material estimation engine.",
-    icon: <Calculator className="w-6 h-6 text-indigo-600" />,
-    href: "/estimate",
-    badge: "Enterprise",
-    colSpan: "md:col-span-2",
-    bg: "bg-indigo-50/50"
-  },
-  {
-    title: "Drawing Hub",
-    description: "2D & 3D CAD blueprint management system.",
-    icon: <Layers className="w-6 h-6 text-blue-600" />,
-    href: "/drawing",
-    bg: "bg-blue-50/50"
-  },
-  {
-    title: "Tools Catalog",
-    description: "Complete repository of engineering utilities and processors.",
-    icon: <LayoutTemplate className="w-6 h-6 text-slate-700" />,
-    href: "/dashboard",
-    badge: "v4.0",
-    bg: "bg-slate-50"
-  },
-  {
-    title: "Unit Converter",
-    description: "Precision conversion for global engineering standards.",
-    icon: <Ruler className="w-6 h-6 text-purple-600" />,
-    href: "/tool/unit-converter",
-    bg: "bg-purple-50/50",
-    colSpan: "md:col-span-2"
-  },
-  {
-    title: "Material Calculator",
-    description: "Structural load and material requirement processor.",
-    icon: <Zap className="w-6 h-6 text-amber-600" />,
-    href: "/tool/material-calculator",
-    bg: "bg-amber-50/50"
-  }
-];
+const leftLink = {
+  title: "TOOLS CATALOG",
+  description: "Access the complete suite of high-fidelity engineering utilities and AI processors.",
+  icon: <LayoutTemplate className="w-10 h-10 text-white" />,
+  href: "/dashboard",
+  cta: "EXPLORE CATALOG"
+};
 
-const stats = [
-  { label: "Active Nodes", value: "1,204", icon: <Globe className="w-3 h-3" /> },
-  { label: "System Load", value: "12%", icon: <Activity className="w-3 h-3" /> },
-  { label: "Secured", value: "AES-256", icon: <Lock className="w-3 h-3" /> },
+const rightLinks = [
+  {
+    title: "ESTIMATE HUB",
+    description: "INDUSTRIAL-GRADE PROJECT COST AND MATERIAL ESTIMATION ENGINE.",
+    icon: <Calculator className="w-5 h-5 text-indigo-600" />,
+    href: "/estimate",
+    badge: "ENTERPRISE",
+  },
+  {
+    title: "DRAWING HUB",
+    description: "2D & 3D CAD BLUEPRINT MANAGEMENT SYSTEM.",
+    icon: <Layers className="w-5 h-5 text-blue-600" />,
+    href: "/drawing",
+  },
+  {
+    title: "MATERIAL CALCULATOR",
+    description: "STRUCTURAL LOAD AND MATERIAL REQUIREMENT PROCESSOR.",
+    icon: <Zap className="w-5 h-5 text-amber-600" />,
+    href: "/tool/material-calculator",
+  },
+  {
+    title: "UNIT CONVERTER",
+    description: "PRECISION CONVERSION FOR GLOBAL ENGINEERING STANDARDS.",
+    icon: <Ruler className="w-5 h-5 text-purple-600" />,
+    href: "/tool/unit-converter",
+  }
 ];
 
 export default function DashMain2D() {
   return (
     <div className="min-h-screen w-full bg-[#fcfcfd] text-slate-900 font-sans selection:bg-indigo-100 selection:text-indigo-900">
       
-      {/* Structural Grid Decor */}
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03] pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-6 py-12 lg:py-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 py-12 relative z-10">
         
         {/* Spacer for clean top entry */}
-        <div className="h-12" />
+        <div className="h-4" />
 
-        {/* Bento Grid 2D */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-20">
+        {/* Bento Grid 2D - Specific Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
           
-          {/* Featured: Tools Catalog */}
+          {/* Left Side: Large vertical card */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.1 }}
-            className="md:col-span-2 md:row-span-2"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            className="h-full"
           >
             <Link 
-              href="/dashboard"
-              className="group flex flex-col justify-between h-full p-10 bg-white border-2 border-slate-100 rounded-[2.5rem] hover:border-indigo-600/20 hover:shadow-2xl hover:shadow-indigo-500/5 transition-all duration-500"
+              href={leftLink.href}
+              className="group flex flex-col justify-between h-full min-h-[600px] p-12 bg-[#e8eef6] border-[3px] border-slate-950 rounded-[2.5rem] hover:shadow-[8px_8px_0px_rgba(15,23,42,1)] transition-all duration-300"
             >
               <div>
-                <div className="w-14 h-14 bg-indigo-600 rounded-2xl flex items-center justify-center mb-10 shadow-lg shadow-indigo-200 group-hover:scale-110 transition-transform duration-500">
-                  <LayoutTemplate className="w-7 h-7 text-white" />
+                <div className="w-20 h-20 bg-indigo-600 rounded-[1.5rem] flex items-center justify-center mb-16 shadow-lg shadow-indigo-100 group-hover:scale-110 transition-transform">
+                  {leftLink.icon}
                 </div>
-                <h2 className="text-4xl md:text-5xl font-black tracking-tighter mb-6">TOOLS <br/> CATALOG</h2>
-                <p className="text-slate-500 font-medium text-lg leading-relaxed max-w-sm">
-                  Access the complete suite of high-fidelity engineering utilities and AI processors.
+                <h2 className="text-6xl font-black tracking-tighter mb-8 leading-[0.9] text-slate-950">
+                  TOOLS <br/> CATALOG
+                </h2>
+                <p className="text-slate-600 font-bold text-xl leading-relaxed max-w-sm">
+                  {leftLink.description}
                 </p>
               </div>
-              <div className="flex items-center gap-2 pt-10 text-indigo-600 font-black text-xs uppercase tracking-[0.2em] group-hover:gap-4 transition-all">
-                <span>Explore Catalog</span>
-                <ChevronRight className="w-4 h-4" />
+              <div className="flex items-center gap-3 pt-12 text-indigo-600 font-black text-sm uppercase tracking-[0.2em] group-hover:gap-5 transition-all">
+                <span>{leftLink.cta}</span>
+                <ChevronRight className="w-5 h-5" />
               </div>
             </Link>
           </motion.div>
 
-          {/* Secondary Links */}
-          {mainLinks.filter(l => l.title !== "Tools Catalog").map((link, i) => (
-            <motion.div 
-              key={link.title}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 + (i * 0.1) }}
-              className={link.colSpan || "col-span-1"}
-            >
-              <Link 
-                href={link.href}
-                className={`group flex flex-col justify-between h-full p-8 ${link.bg} border border-slate-100 rounded-[2rem] hover:bg-white hover:border-indigo-600/20 hover:shadow-xl transition-all duration-500`}
+          {/* Right Side: 4 vertical-stacked horizontal cards */}
+          <div className="flex flex-col gap-4 h-full">
+            {rightLinks.map((link, i) => (
+              <motion.div 
+                key={link.title}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.1 }}
+                className="flex-1"
               >
-                <div className="flex justify-between items-start mb-4">
-                  <div className="w-10 h-10 bg-white border border-slate-200 rounded-xl flex items-center justify-center shadow-sm group-hover:border-indigo-200 group-hover:scale-110 transition-all">
-                    {link.icon}
+                <Link 
+                  href={link.href}
+                  className="group flex flex-col justify-center h-full min-h-[145px] p-8 bg-[#e8eef6] border-[3px] border-slate-950 rounded-[2.2rem] hover:shadow-[6px_6px_0px_rgba(15,23,42,1)] transition-all duration-300"
+                >
+                  <div className="flex gap-6 items-center">
+                    {/* Icon Box */}
+                    <div className="w-12 h-12 bg-white border-2 border-slate-200 rounded-xl flex items-center justify-center shrink-0 group-hover:border-indigo-400 group-hover:scale-105 transition-all">
+                      {link.icon}
+                    </div>
+                    
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-1">
+                         <h3 className="text-xl font-black tracking-tight text-slate-950 uppercase">{link.title}</h3>
+                         {link.badge && (
+                          <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 border border-slate-200 px-2 py-0.5 rounded-lg bg-white">
+                            {link.badge}
+                          </span>
+                        )}
+                      </div>
+                      <p className="text-[10px] text-slate-500 font-black leading-tight uppercase tracking-wider">
+                        {link.description}
+                      </p>
+                    </div>
                   </div>
-                  {link.badge && (
-                    <span className="text-[9px] font-black uppercase tracking-widest text-slate-400 border border-slate-200 px-2 py-0.5 rounded-lg bg-white">
-                      {link.badge}
-                    </span>
-                  )}
-                </div>
-                <div>
-                  <h3 className="text-xl font-black tracking-tight mb-2 text-slate-900 group-hover:text-indigo-600 transition-colors uppercase">{link.title}</h3>
-                  <p className="text-[11px] text-slate-500 font-bold leading-snug uppercase tracking-wider">{link.description}</p>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+
         </div>
 
         {/* Footer Info */}
-        <footer className="flex flex-col md:flex-row items-center justify-between pt-12 border-t border-slate-100 opacity-60">
-           <div className="flex gap-10 mb-6 md:mb-0">
+        <footer className="flex flex-col md:flex-row items-center justify-between pt-12 border-t-2 border-slate-950/10">
+           <div className="flex gap-10 mb-6 md:mb-0 opacity-40">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-slate-400" />
+                <ShieldCheck className="w-4 h-4 text-slate-950" />
                 <span className="text-[10px] font-black uppercase tracking-widest">Enterprise Security</span>
               </div>
               <div className="flex items-center gap-2">
-                <Zap className="w-4 h-4 text-slate-400" />
+                <Zap className="w-4 h-4 text-slate-950" />
                 <span className="text-[10px] font-black uppercase tracking-widest">Low Latency Compute</span>
               </div>
            </div>
