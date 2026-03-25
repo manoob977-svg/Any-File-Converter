@@ -38,19 +38,19 @@ export default function FooterV2() {
   ];
 
   return (
-    <footer className="bg-black/40 border-t border-white/5 pt-24 pb-12 px-6">
+    <footer className="bg-slate-50 border-t border-slate-200 pt-24 pb-12 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-12 gap-12 mb-20">
           
           {/* Brand Info */}
           <div className="col-span-2 md:col-span-4">
             <Link href="/" className="flex items-center gap-2 group mb-8">
-              <div className="p-2 bg-linear-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-lg shadow-lg">
+              <div className="p-2 bg-indigo-600 rounded-lg shadow-lg">
                 <FileText className="w-5 h-5 text-white" />
               </div>
-              <span className="text-lg font-black tracking-tighter text-gradient">Engineering Hub</span>
+              <span className="text-lg font-black tracking-tighter text-slate-900">Engineering Hub</span>
             </Link>
-            <p className="text-gray-500 text-sm max-w-sm mb-8 leading-relaxed font-medium">
+            <p className="text-slate-500 text-sm max-w-sm mb-8 leading-relaxed font-medium">
               High-precision document intelligence and engineering calculation terminal. Built for the elite engineering workflow.
             </p>
             <div className="flex items-center gap-4">
@@ -60,7 +60,7 @@ export default function FooterV2() {
                   href={href} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="p-2 bg-white/5 rounded-xl border border-white/10 hover:border-indigo-400 hover:text-indigo-400 transition-all font-bold"
+                  className="p-2 bg-white rounded-xl border border-slate-200 hover:border-indigo-600 hover:text-indigo-600 transition-all shadow-sm"
                 >
                   <Icon className="w-4 h-4" />
                 </a>
@@ -72,11 +72,11 @@ export default function FooterV2() {
           <div className="col-span-2 md:col-span-8 grid grid-cols-2 md:grid-cols-3 gap-12">
             {sections.map((section, i) => (
               <div key={i}>
-                <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30 mb-8">{section.title}</h4>
+                <h4 className="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-8">{section.title}</h4>
                 <ul className="space-y-4">
                   {section.links.map((link, j) => (
                     <li key={j}>
-                      <Link href={link.href} className="text-sm font-bold text-gray-500 hover:text-indigo-400 transition-colors">
+                      <Link href={link.href} className="text-sm font-bold text-slate-500 hover:text-indigo-600 transition-colors">
                         {link.name}
                       </Link>
                     </li>
@@ -88,12 +88,12 @@ export default function FooterV2() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-gray-600">
-           <p>© {new Date().getFullYear()} Engineering Hub. All rights reserved.</p>
+        <div className="pt-12 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+           <p>© {new Date().getFullYear()} Engineering Hub Global. All rights reserved.</p>
            <div className="flex items-center gap-8">
               <span className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                Systems Operational
+                <div className="w-1.5 h-1.5 rounded-full bg-indigo-600 animate-pulse" />
+                Connectivity Stable
               </span>
               <span>Made with Precision</span>
            </div>

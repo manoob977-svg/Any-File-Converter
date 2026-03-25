@@ -26,12 +26,12 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-6 left-0 right-0 z-50 px-4 pointer-events-none">
-      <div className="max-w-7xl mx-auto bg-black/60 backdrop-blur-2xl border border-white/10 rounded-2xl px-6 py-3 flex items-center justify-between shadow-[0_20px_50px_rgba(0,0,0,0.5)] pointer-events-auto">
+      <div className="max-w-7xl mx-auto bg-white border border-slate-200 rounded-2xl px-6 py-3 flex items-center justify-between shadow-lg shadow-slate-200/50 pointer-events-auto">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="p-2 bg-linear-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-lg group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 shadow-lg shadow-indigo-500/20">
+          <div className="p-2 bg-indigo-600 rounded-lg group-hover:rotate-12 group-hover:scale-110 transition-all duration-500 shadow-lg shadow-indigo-100">
             <FileText className="w-6 h-6 text-white" />
           </div>
-          <span className="text-xl font-bold tracking-tighter text-gradient">Engineering Hub</span>
+          <span className="text-xl font-bold tracking-tighter text-slate-900">Engineering Hub</span>
         </Link>
 
         {/* Desktop Menu */}
@@ -40,29 +40,29 @@ export default function Navbar() {
             <Link 
               key={link.name}
               href={link.href} 
-              className={`relative text-[10px] font-bold uppercase tracking-[0.2em] transition-all hover:text-white ${
-                isActive(link.href) ? "text-indigo-400" : "text-white/40"
+              className={`relative text-[10px] font-bold uppercase tracking-[0.2em] transition-all hover:text-indigo-600 ${
+                isActive(link.href) ? "text-indigo-600" : "text-slate-400"
               } group`}
             >
               {link.name}
-              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-500 transition-all duration-300 group-hover:w-full ${isActive(link.href) ? "w-full" : ""}`} />
+              <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-indigo-600 transition-all duration-300 group-hover:w-full ${isActive(link.href) ? "w-full" : ""}`} />
             </Link>
           ))}
           
-          <div className="h-4 w-px bg-white/10 mx-2" />
+          <div className="h-4 w-px bg-slate-200 mx-2" />
 
           <div className="flex items-center gap-4 ml-4">
-            <Link href="/login" className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 hover:text-white transition-all">
+            <Link href="/login" className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 hover:text-indigo-600 transition-all">
               Sign In
             </Link>
-            <Link href="/signup" className="btn-primary scale-75 hover:scale-95 transition-all">
+            <Link href="/signup" className="px-6 py-2 bg-slate-900 text-white text-[10px] font-bold uppercase tracking-widest rounded-lg hover:bg-indigo-600 transition-all">
               Sign Up
             </Link>
           </div>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden p-2 text-white/40" onClick={() => setIsOpen(!isOpen)}>
+        <button className="md:hidden p-2 text-slate-400" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
